@@ -11,7 +11,8 @@ import SwiftUI
 struct TreatmentJsonExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let postViewModel = PostViewModel()
+            ContentView().environmentObject(postViewModel)
         }
     }
 }
