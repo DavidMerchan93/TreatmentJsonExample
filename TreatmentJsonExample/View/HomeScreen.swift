@@ -20,16 +20,17 @@ struct HomeScreen: View {
                 List(usersViewModel.users, id: \.id) { user in
                     HStack {
                         Text(String(user.id))
+                            .font(.title)
                             .padding(12)
+                        
                         VStack(alignment: .leading) {
                             Text(user.name)
                             Text(user.email)
                         }.padding(12)
                     }
                 }.navigationTitle("JSON APP")
-                    .navigationBarItems(leading: Button("Siguiente") {
-                        
-                    }, trailing: Button("Salir") {
+                    .navigationBarItems(
+                        leading: NavigationLink(destination: UsersListScreen(), label: { Text("Siguiente") }), trailing: Button("Salir") {
                         postViewModel.logout()
                     })
             }
