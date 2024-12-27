@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    @EnvironmentObject var postViewModel : PostViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("Bienvenido !!")
+                .navigationTitle("JSON APP")
+                .navigationBarItems(leading: Button("Siguiente") {
+                    
+                }, trailing: Button("Salir") {
+                    postViewModel.logout()
+                })
+        }
     }
-}
-
-#Preview {
-    HomeScreen()
 }

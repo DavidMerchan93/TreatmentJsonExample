@@ -12,7 +12,11 @@ class PostViewModel: ObservableObject {
     @Published var authenticated = 0
     
     init() {
-        login(email: "eve.holt@reqres.in", password: "cityslicka")
+        if let session = UserDefaults.standard.object(forKey: "session") as? String {
+            authenticated = 1
+        } else {
+            authenticated = 0
+        }
     }
     
     func login(email: String, password: String) {
@@ -39,18 +43,25 @@ class PostViewModel: ObservableObject {
                         // Decodificamos la respuesta
                     let result = try JSONDecoder().decode(PostModel.self, from: data)
                     if !result.token.isEmpty {
-                        print("Login exitoso")
+                        print("Login exitoso!!")
+                        print("Token: \(result.token)")
+                        UserDefaults.standard.set(result.token, forKey: "session")
                         self.authenticated = 1
                     }
                     
                 } catch let error as NSError {
                     print("Ocurrio un error en el login: \(error.localizedDescription)")
-                    self.authenticated = 0
+                    self.authenticated = 2
                 }
                 
             }
             
         }.resume()
+    }
+    
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "session")
+        self.authenticated = 0
     }
     
 }

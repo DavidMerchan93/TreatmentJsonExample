@@ -9,10 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var postViewModel = PostViewModel()
+    @EnvironmentObject var postViewModel: PostViewModel
     
     var body: some View {
-        LoginScreen()
+        Group {
+            switch postViewModel.authenticated {
+            case 0:
+                LoginScreen()
+            case 1:
+                HomeScreen()
+            default:
+                VStack {
+                    Text("Ocurrio un error en el login")
+                    Button("Reiniciar") {
+                        postViewModel.authenticated = 1
+                    }
+                }
+            }
+        }
+        
     }
 }
 
