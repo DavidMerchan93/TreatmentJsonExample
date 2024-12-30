@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9686772C2D2312A300B91BBF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9686772B2D2312A300B91BBF /* WidgetKit.framework */; };
+		9686772E2D2312A300B91BBF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9686772D2D2312A300B91BBF /* SwiftUI.framework */; };
+		9686773D2D2312A500B91BBF /* JsonWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 968677292D2312A300B91BBF /* JsonWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9686773B2D2312A500B91BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 966906BB2D19F1AD00C61934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 968677282D2312A300B91BBF;
+			remoteInfo = JsonWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		968677422D2312A500B91BBF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9686773D2D2312A500B91BBF /* JsonWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		966906C32D19F1AD00C61934 /* TreatmentJsonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreatmentJsonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		968677292D2312A300B91BBF /* JsonWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JsonWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9686772B2D2312A300B91BBF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		9686772D2D2312A300B91BBF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9686773E2D2312A500B91BBF /* Exceptions for "JsonWidget" folder in "JsonWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 968677282D2312A300B91BBF /* JsonWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		966906C52D19F1AD00C61934 /* TreatmentJsonExample */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TreatmentJsonExample;
+			sourceTree = "<group>";
+		};
+		9686772F2D2312A300B91BBF /* JsonWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9686773E2D2312A500B91BBF /* Exceptions for "JsonWidget" folder in "JsonWidgetExtension" target */,
+			);
+			path = JsonWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		968677262D2312A300B91BBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9686772E2D2312A300B91BBF /* SwiftUI.framework in Frameworks */,
+				9686772C2D2312A300B91BBF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				966906C52D19F1AD00C61934 /* TreatmentJsonExample */,
+				9686772F2D2312A300B91BBF /* JsonWidget */,
+				9686772A2D2312A300B91BBF /* Frameworks */,
 				966906C42D19F1AD00C61934 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				966906C32D19F1AD00C61934 /* TreatmentJsonExample.app */,
+				968677292D2312A300B91BBF /* JsonWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9686772A2D2312A300B91BBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9686772B2D2312A300B91BBF /* WidgetKit.framework */,
+				9686772D2D2312A300B91BBF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				966906BF2D19F1AD00C61934 /* Sources */,
 				966906C02D19F1AD00C61934 /* Frameworks */,
 				966906C12D19F1AD00C61934 /* Resources */,
+				968677422D2312A500B91BBF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9686773C2D2312A500B91BBF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				966906C52D19F1AD00C61934 /* TreatmentJsonExample */,
@@ -69,6 +143,28 @@
 			productName = TreatmentJsonExample;
 			productReference = 966906C32D19F1AD00C61934 /* TreatmentJsonExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		968677282D2312A300B91BBF /* JsonWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9686773F2D2312A500B91BBF /* Build configuration list for PBXNativeTarget "JsonWidgetExtension" */;
+			buildPhases = (
+				968677252D2312A300B91BBF /* Sources */,
+				968677262D2312A300B91BBF /* Frameworks */,
+				968677272D2312A300B91BBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9686772F2D2312A300B91BBF /* JsonWidget */,
+			);
+			name = JsonWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = JsonWidgetExtension;
+			productReference = 968677292D2312A300B91BBF /* JsonWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					966906C22D19F1AD00C61934 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					968677282D2312A300B91BBF = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				966906C22D19F1AD00C61934 /* TreatmentJsonExample */,
+				968677282D2312A300B91BBF /* JsonWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		966906C12D19F1AD00C61934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		968677272D2312A300B91BBF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		968677252D2312A300B91BBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9686773C2D2312A500B91BBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 968677282D2312A300B91BBF /* JsonWidgetExtension */;
+			targetProxy = 9686773B2D2312A500B91BBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		966906CF2D19F1AF00C61934 /* Debug */ = {
@@ -302,6 +424,60 @@
 			};
 			name = Release;
 		};
+		968677402D2312A500B91BBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZE8F8Y887G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JsonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JsonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidmerchan.TreatmentJsonExample.JsonWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		968677412D2312A500B91BBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZE8F8Y887G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JsonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JsonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidmerchan.TreatmentJsonExample.JsonWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +495,15 @@
 			buildConfigurations = (
 				966906D22D19F1AF00C61934 /* Debug */,
 				966906D32D19F1AF00C61934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9686773F2D2312A500B91BBF /* Build configuration list for PBXNativeTarget "JsonWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				968677402D2312A500B91BBF /* Debug */,
+				968677412D2312A500B91BBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
