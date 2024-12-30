@@ -44,11 +44,24 @@ struct Provider: TimelineProvider {
 // Diseño
 struct JsonWidgetEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family
 
     var body: some View {
         VStack {
-            Text("Emoji:")
-            Text(entry.emoji)
+            switch family {
+                case .systemSmall:
+                    Text("Emoji Small:")
+                    Text(entry.emoji)
+                case .systemMedium:
+                    Text("Emoji Medium:")
+                    Text(entry.emoji)
+                case .systemLarge:
+                    Text("Emoji Large:")
+                    Text(entry.emoji)
+                default:
+                    Text("Emoji Default:")
+                    Text(entry.emoji)
+            }
         }
     }
 }
@@ -66,6 +79,7 @@ struct JsonWidget: Widget {
         }
         .configurationDisplayName("My Widget") // Nombre del widget
         .description("This is an example widget.") // Detalle del widget
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge]) // Diferentes tamaños
     }
 }
 
